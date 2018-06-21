@@ -1,0 +1,30 @@
+<div class="columns">
+  <div class="column is-11">
+    <div class="field">
+      <div class="control">
+        <input class="input is-primary" (ngModelChange)="onChangeSkus($event)" [(ngModel)]="SKUs" type="text" placeholder="Caso queira adicionar SKUs, separe por vírgula.">
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="control">
+      <button class="button is-primary" [disabled]="btnAdicionarSkuDisabled" (click)="adicionarSkus();">Adicionar</button>
+    </div>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column is-12">
+    <div class="field is-grouped is-grouped-multiline">
+
+      <div class="control" *ngFor="let item of listaSKUs">
+        <div class="tags has-addons">
+          <span class="tag is-primary">{{item}}</span>
+          <a class="tag is-delete" (click)="remover(item);"></a>
+        </div>
+      </div>
+
+      <button (click)="processar();" [ngClass]="btnProcessarProcessando ? 'is-loading' : ''" class="button is-primary is-fullwidth" [disabled]="btnProcessarDesabilitado">Processar SKUs</button>
+    </div>
+  </div>
+</div>

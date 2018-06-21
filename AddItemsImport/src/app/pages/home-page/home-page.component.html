@@ -1,0 +1,15 @@
+<app-headbar (importacaoSku)="OnImportacaoSku($event)"></app-headbar>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">SKU </h1>
+    <h2 class="subtitle">
+      Importação de produtos
+    </h2>
+
+    <app-add-sku [skuImportacao]="skuImportados"></app-add-sku>
+
+  </div>
+</section>
+
+<app-footer></app-footer>

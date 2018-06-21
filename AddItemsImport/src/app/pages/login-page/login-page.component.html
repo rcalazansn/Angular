@@ -1,0 +1,33 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title pacifico larger-text ">
+        classify Images
+      </h1>
+
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+
+          <form [formGroup]="form">
+            <div class="field">
+              <div class="control">
+                <input class="input" type="text" placeholder="Usuário" formControlName="usuario" [ngClass]="{'is-danger': (!form.controls.usuario.valid && !form.controls.usuario.pristine)}">
+                <span class="tag is-danger" *ngIf="!form.controls.usuario.valid && !form.controls.usuario.pristine">Usuário inválido</span>
+
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" type="password" placeholder="Senha" formControlName="senha" [ngClass]="{'is-danger': (!form.controls.senha.valid && !form.controls.senha.pristine)}">
+                <span class="tag is-danger" *ngIf="!form.controls.senha.valid && !form.controls.senha.pristine">Senha inválido</span>
+              </div>
+            </div>
+            <p class="control">
+              <button (click)="entrar();" class="button is-primary is-inverted is-outlined is-fullwidth" [disabled]="!form.valid">ENTRAR</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
